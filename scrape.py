@@ -33,7 +33,7 @@ p = "" # clear the password. Not sure if important
 roastme = reddit.subreddit("RoastMe")
 
 # Get top posts 
-posts = roastme.top(time_filter="all", limit=3)
+posts = roastme.top(time_filter="all", limit=300)
 
 # store bests roasts and some data
 roasts = []
@@ -71,5 +71,5 @@ with open('roasts.csv', "w", newline="") as f:
     writer.writerow(["Id","Score", "Replies", "isGilded", "Roasts"])
 
     for i in range(len(ids)):
-        writer.writerow([ids[i]] + [str(scores[i][0])] + [str(scores[i][0])] + [str(is_gilded[i])] + [roasts[i]] )
+        writer.writerow([ids[i]] + [str(scores[i][0])] + [str(scores[i][1])] + [str(is_gilded[i])] + [roasts[i]] )
 
